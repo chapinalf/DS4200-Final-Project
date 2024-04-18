@@ -1,230 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking Data</title>
-    <link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
-    
-    <h1> US unemployment rate analysis</h1>
 
-    <h3>Overall Introduction</h3>
+    <h1>Hotel Booking Data Analysis</h1>
 
-    <p>Understanding the US unemployment rate is crucial for assessing
-        the health of the economy and the well-being of its citizens. 
-        The unemployment rate represents the percentage of people in 
-        labor force who are actively seeking employment but are unable
-        to find jobs. This metric serves as a key indicator of economic
-         performance, reflecting the availability of job opportunities 
-         and the overall level of economic activity. </p>
+    <h3>Topic Introduction</h3>
 
-    <p>Monitoring the unemployment rate provides insights into 
-        various aspects of the economy, such as consumer spending,
-         business confidence, and government policies' effectiveness.
-        A high unemployment rate may indicate economic downturns, 
-        leading to decreased consumer spending, reduced business 
-        investments, and potential social unrest. Conversely, 
-        a low unemployment rate signifies a robust economy with 
-        ample job opportunities, contributing to higher consumer 
-        confidence and economic growth.</p>
+    <p>Our dataset concerns customers from different countries making hotel bookings in a specific city hotel and a
+        specific resort hotel, with varying costs. We thought this was an interesting topic because there could be
+        trends in the relationships between any of the attributes and cost, which likely reflects trends in the real
+        world when booking hotels. This could in turn help us and other individuals when booking hotels.</p>
 
-    <p>Several social factors are closely related to the unemployment
-         rate. Persistent unemployment can lead to financial hardships,
-          increased poverty rates, and reduced access to essential 
-          services, such as healthcare and education. Moreover, 
-          unemployment may exacerbate existing social inequalities, 
-          disproportionately affecting marginalized communities, 
-          including minorities, youth, and individuals with lower 
-          educational attainment.</p>
+    <h3>Dataset Introduction</h3>
 
-    <p>To learn more about the US unemployment rate and its implications,
-         you can visit the <a href="https://www.bls.gov/">Bureau of Labor Statistics website</a> or explore 
-         analysis reports from reputable research organizations like 
-         <a href="https://www.pewresearch.org/">Pew Research Center</a>.</p>
+    <p>Our dataset was taken from Kaggle, and was originally called 'Hotel booking demand'. It has over 100,000 rows and
+        also 32 columns. Each row of the dataset represents one specific hotel booking, and each column represents one
+        of the attributes in relation to the booking, such as the number of weekend/weekday nights booked, the arrival
+        date day/month/year, the number of adults/children/babies, the country of origin for the customers, and the cost
+        of the booking. </p>
 
-    <h3>Introduction to the data</h3>
+    <h3>Reference Sites</h3>
+    <p>Our first reference was a research paper about predicting hotel booking cancellations
+        (<a
+            href="https://www.sciencedirect.com/science/article/abs/pii/S0167923623000349">https://www.sciencedirect.com/science/article/abs/pii/S0167923623000349</a>).
+        The paper describes how the
+        researchers integrated Bayesian Networks (probability models) and Machine Learning models to achieve accurate
+        hotel booking cancellation predictions. The paper notes that this accuracy would allow hotel owners and managers
+        to make effective operating decisions, such as hotel cancellation policies and pricing strategies.
+    </p>
+    <p>Our second reference was a research article published on a blog about analyzing hotel booking data
+        (<a
+            href="https://nycdatascience.com/blog/r/hotel-bookings-data-analysis/">https://nycdatascience.com/blog/r/hotel-bookings-data-analysis/</a>).
+        The article describes how the researcher
+        created an app that studies cancellation patterns in hotel bookings, with an aim to help hotel owners set up
+        robust cancellation policies. The researcher found that the type of hotel can be a factor in canceling a
+        booking, that there were more third-party cancellations (canceling through a separate website) than direct
+        cancellations (canceling through the hotel), and that there were more cancellations during months with higher
+        average daily costs (for third-party cancellations).</p>
 
-    <p> Our analysis makes use of two datasets. the first data is 
-        a data set called `us_statewide_crime.csv` which contains 
-        the following crime statistics for all US states and the 
-        District of Columbia in 2010. The data has 50 rows with 9 
-        features. The detail information about the features are listed
-        in the following table:</p>  
+    <h3>Tasks</h3>
+    <p>Our first task was to learn overall information about the customers who were making hotel bookings, based on the
+        countries they came from. We approached this task by making an interactive map of the countries in the world.
+        There is a color scale to indicate concentration of customer origin in each country, as well as a tooltip to
+        show the total number of bookings made, the average number of adults per booking, and the average cost of a
+        booking in bookings made by people from that country.
+    </p>
+    <p>Our second task was to learn about how far in advance bookings are made when the bookings are cheapest. We
+        approached this task by making an interactive scatter plot of the number of days booked in advance compared to
+        the average daily cost of a booking. There are different colors to distinguish bookings made for a city hotel
+        versus for a resort hotel, a dropdown menu to select different hotel types, and a dropdown menu to select
+        different room types.
+    </p>
+    <p>Our third task was to learn about what time of the year is typically cheapest to make a booking, as well as
+        other details concerning the relationship between time of the year and cost. We approached this task by making a
+        static line plot showing the average daily cost of a booking for each arrival week in a year. There are
+        different colored points and lines to distinguish between each of the three years in our data.
+    </p>
+    <p>Our fourth task was to learn about how the number of children in a group for a booking affects the cost of the
+        booking. We approached this task by making a static bar graph showing the average daily cost of a booking for
+        groups with different numbers of children.
+    </p>
+    <p>Our fifth task was to learn about whether using a travel agent to make a booking was more likely to result in
+        cancellation or not. We approached this task by making a static bar graph showing the number of canceled
+        bookings when a travel agent was used and when a travel agent was not used.
+    </p>
 
-        <div class="center">
-        <table class="tg">
-            <thead>
-              <tr>
-                <th class="tg-0lax">Variable Name</th>
-                <th class="tg-0lax">Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="tg-0lax">State</td>
-                <td class="tg-0lax">State name</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Violent_Crime</td>
-                <td class="tg-0lax">Violent crime rate (per 100,000 residents)</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Murder_Rate</td>
-                <td class="tg-0lax">Murder rate (per 100,000 residents)</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Poverty</td>
-                <td class="tg-0lax">Percent of residents below the poverty rate</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">High_School</td>
-                <td class="tg-0lax">Percent of residents with a high school degree</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">College</td>
-                <td class="tg-0lax">Percent of residents with a four-year college degree</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Single_Parent</td>
-                <td class="tg-0lax">Percent of children living in single parent families</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Unemployed</td>
-                <td class="tg-0lax">Unemployment rate</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Metropolitan</td>
-                <td class="tg-0lax">Percent of residents living in a metropolitan area</td>
-              </tr>
-            </tbody>
-            </table>
-        </div>
-        <p>Meanwhile, we also believe that the geographical 
-            information is important when evaluating the unemployment
-            rate. Therefore, we also make use of geographical information 
-            on <a href="https://www.naturalearthdata.com/downloads/">Natural Earth</a>. 
-            The website provides the geographical information for making maps for US states. 
-        </p>
 
-        <p>To make a better data visualization, we remove the Alaska and Hawaii
-            from the data. Following is an interactive map for the 
-            lower 48 states in US. User can zoom in the map. The color
-            indicates the unemployment rate for each state. When click any 
-            state, other social factors will be revealed for the state. </p>
-
-            <div class = 'center'>
-                <iframe src="map.html" width="80%" height="400px" frameborder="0"></iframe>
-            </div>
-            
-            <p>In general, west coast states tend to have higher 
-                unemployment rate. On the east coast, West virginia 
-                and New York state tend to have higher unemplyment rate
-                than the others. In the south, Mississippi and Louisiana
-                are the ones with the much higher unemplyment rate.
+    <h3>Line Graph Showing Costs for Hotel Bookings Across Several Years</h3>
+    <div class='image'>
+        <iframe src="line_plot.html" width="100%" height="500px" frameborder="0"></iframe>
+    </div>
+    <div class='container'>
+        <div class='text'>
+            <p>Since we wanted to see both the overall trends in cost over the period of a year and specific times in
+                the period of a year when the price was cheapest/most expensive, we thought using a line graph showing
+                each of the individual points would be beneficial. We plotted the average cost for each week in a year
+                because we thought that plotting each day would be too much information for the reader to digest, and
+                that plotting each month would not allow us to see enough specific detail about the price being most
+                cheap/expensive. We plotted three different lines (one for each year) because we wanted to use all the
+                data given (for the years 2015 - 2017), since just using the data for one year would not give an
+                accurate sense of the trends (ex. if we only plotted the year where the price generally increased, but
+                the other two years had the price generally decreasing, that would give the reader the wrong idea). We
+                plotted each of the three lines in a different shade of purple because we wanted to emphasize that
+                although they were different years, the year number is increasing (hence the lighter shade of purple to
+                darker shade).
             </p>
-
-        <h3>Overview of the Unemployment rate</h3>
-        
-        <div class = 'container'>
-            <div class = 'image'>
-                <!-- <iframe src="histogram/index.html" width="100%" height="400px" frameborder="0"></iframe>-->
-                <iframe src="histogram/finish.png" width="100%" height="400px" frameborder="0"></iframe>
-            </div>
-            <div class = 'text'>
-                <p> First, we present an overview of the unemployment rate
-                    for all 50 states. Alaska is the one with the 
-                    highest unemployment rate, which may due to the seasonal 
-                    business in the state. The effectiveness of labor market 
-                    policies and governance structures can influence unemployment 
-                    rates. Washington, D.C., being the seat of government, may 
-                    experience fluctuations in employment related to government 
-                    spending and policies. Mississippi and Louisiana have economies 
-                    that are heavily reliant on sectors such as agriculture, 
-                    manufacturing, and energy. Economic downturns or fluctuations 
-                    in these industries can impact employment opportunities. 
-                    Connecticut, South Dakota and Virginia have the lowest 
-                    unemplyment rate. These states often have diverse economies 
-                    with strong sectors such as technology, healthcare, finance, 
-                    and tourism. A diverse economy can provide more resilience to 
-                    economic downturns.
-                </p>
-            </div>            
+            <p>
+                In 2015, the average daily cost of a hotel booking generally alternated between increasing and
+                decreasing between weeks 27 and 53 (around early July through the end of December). The cheapest average
+                daily cost was around 59 in week 51 (around mid-December). The cheapest range of average daily costs was
+                between weeks 45 and 52 (around early November until late December). The most expensive average daily
+                cost was around 116 in week 34 (around late August).
+            </p>
+            <p>
+                In 2016, the average daily cost of a hotel booking generally increased between weeks 1 and 34 (around
+                the beginning of January through mid-August), and generally decreased between weeks 34 and 53 (around
+                mid-August through the end of December). The cheapest average daily cost was around 59 in week 3 (around
+                mid-January). The cheapest range of average daily costs was between weeks 2 and 12 (around early January
+                through mid-March). The most expensive average daily cost was around 150 in week 34 (around late
+                August). The most expensive range of average daily costs was between weeks 28 and 36 (around mid July
+                until early September).
+            </p>
+            <p>In 2017, the average daily cost of a hotel booking generally increased between weeks 1 and 35 (around the
+                beginning of January through late August). The cheapest average daily cost was around 72 in week 5
+                (around late January). The cheapest range of average daily costs was between weeks 1 and 13 (around the
+                beginning of January through late March). The most expensive average daily cost was around 170 in week
+                33 (around mid-August). The most expensive range of average daily costs was between weeks 30 and 35
+                (around late July through late August).
+            </p>
+            <p>
+                In general, the average daily costs of a hotel booking in 2016 are greater than the average daily costs
+                of a hotel booking in 2015 between weeks 27 and 53 (around early July through the end of December). The
+                average daily costs of a hotel booking in 2017 are greater than the average daily costs of a hotel
+                booking in 2016 between weeks 1 and 35 (around the beginning of January through late August).
+            </p>
+            <p>
+                As a whole, the graph suggests that the average daily cost of a hotel booking appears to increase
+                between weeks 1 and 35 (around the beginning of January through late August), and then appears to
+                decrease between weeks 35 and 52 (around late August until late December), and then increase again
+                between weeks 52 and 53 (from late December until the end of December). The graph suggests that the
+                cheapest range of average daily costs appears to be between weeks 2 and 12 (around early January through
+                mid-March), and also between weeks 45 and 52 (around early November until late December). The most
+                expensive range of average daily costs appears to be between weeks 30 and 35 (around late July through
+                late August). The average daily costs of a hotel booking also appear to be getting more expensive with
+                each year.
+            </p>
         </div>
-        
-        <h3> The relationship between unemployment rate and other social factors</h3>
+    </div>
 
-        <div class = 'container'>
-            <div class = 'text'>
-                <p>Moreover, we also want to examine the relationship between
-                    unemployment rate and other social factors in the data. All 
-                    features are numerical thus we firts create a correlation
-                    plot to examine whether there are linear relationship between 
-                    unemployment rate with other social factors. Notice that if 
-                    the correlation is small, it only means that there is no potential
-                    linear relationship between two features. 
-                </p>
-                <p>
-                    Based on the correlation plot, among all the features, poverty 
-                    has the strongest correlation with the unemployment rate since
-                    they are both related to the economics. The percentage of single 
-                    parents is the second important feature which inidicates the 
-                    stability of family is also strongly related to the job market. 
-                    The increase of unemployment rate may also related to the increase 
-                    of violent crime and murder rate but has a negative relationship
-                    with education indicators, like the percentage of people who go to
-                    high school and college. The only variable that has no direct linear
-                    relation with the unemployment rate is Metropolitan, which means the 
-                    percent of residents living in a metropolitan area. 
-                </p>
-            </div>
-            <div class = 'image'>
-                <img src="correlation_plot.png" width="100%" height="500px" frameborder="0"></img>
-            </div>   
-        </div>
+    <h3>Summary and Additional Work</h3>
 
-        <p>We have also create an interactive scatter plot so that 
-            our users can select a couple of states within
-            a certain range of unemployment rate and to see how the 
-            other factors may be related here. 
-        </p>
+    <p>
+        TODO!
+    </p>
 
-        <div class = 'center'>
-            <iframe src="scatter.html" width="85%" height="550px" frameborder="0"></iframe>
-        </div>
-
-        <h3>Compare MA to the other states</h3>
-
-        <p>
-            Since we are in MA, thus we want to take a closer look between
-            MA and other states. We create the following interactive plot
-            such that user can choose another state to compare with MA and 
-            show the bar plot on each factors. 
-        </p>
-
-        <div class = 'center'>
-            <iframe src="summary.html" width="95%" height="300px" frameborder="0"></iframe>
-        </div>
-
-        <h3>Summary and additional work</h3>
-
-        <p>
-            In this visualization analysis, we try to explore the US 
-            unemployment rate across states. We also examine the relation
-            between unemployment rate and other social factors. 
-        </p>
-        <p>
-            Unfortunately, this is the 2010 data thus may be different 
-            than the current economics status. Also, unemployment rate 
-            may fluctuate seasonally thus adding a time series analysis
-            will be more informative. 
-        </p>
-
-        <p>If you are interested in the project and want to share more
-            opinions or resource about the project, please contact:
-            Xiaoyi Yang (xiaoy.yang@northeastern.edu)
-        </p>
+    <p>If you are interested in the project and want to share more
+        opinions or resource about the project, please contact:
+        Chapin Alf (alf.c@northeastern.edu), Megan Liu (liu.mega@northeastern.edu), James Chang-Davidson
+        (chang-davidson.j@northeaster.edu), Cooper Rivard (rivard.c@northeastern.edu)
+    </p>
 
 </body>
+
 </html>
