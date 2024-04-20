@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-8c56d9cb1f9f61e218bbf81275ed8f97"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "travel_agent_used", "type": "nominal"}, "column": {"field": "is_canceled", "title": "Canceled", "type": "nominal"}, "x": {"axis": {"labels": false, "ticks": false, "title": ""}, "field": "travel_agent_used", "type": "nominal"}, "y": {"field": "count", "title": "Count", "type": "quantitative"}}, "title": {"text": "Cancellations by Travel Agent Used", "anchor": "middle", "baseline": "bottom"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-8c56d9cb1f9f61e218bbf81275ed8f97": [{"travel_agent_used": "No", "is_canceled": "No", "count": 12012}, {"travel_agent_used": "No", "is_canceled": "Yes", "count": 3992}, {"travel_agent_used": "Yes", "is_canceled": "No", "count": 62732}, {"travel_agent_used": "Yes", "is_canceled": "Yes", "count": 40160}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

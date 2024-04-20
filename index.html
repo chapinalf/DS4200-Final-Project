@@ -46,11 +46,11 @@
         average daily costs (for third-party cancellations).</p>
 
     <h3>Tasks</h3>
-    <p>Our first task was to learn overall information about the customers who were making hotel bookings, based on the
-        countries they came from. We approached this task by making an interactive map of the countries in the world.
-        There is a color scale to indicate concentration of customer origin in each country, as well as a tooltip to
-        show the total number of bookings made, the average number of adults per booking, and the average cost of a
-        booking in bookings made by people from that country.
+    <p>Our first task was to learn overall information about the customers who were making hotel bookings, based on the 
+        countries they came from. We approached this task by making an interactive map of the countries in the world that 
+        displays the average daily rate that customers from each country pay. There is a color scale to indicate average 
+        daily rate, as well as a tooltip to show the total number of bookings made, the average number of adults per booking, 
+        the average cost of a booking in bookings made by people from that country, and several other metrics.
     </p>
     <p>Our second task was to learn about how far in advance bookings are made when the bookings are cheapest. We
         approached this task by making an interactive scatter plot of the number of days booked in advance compared to
@@ -73,35 +73,77 @@
     </p>
 
     <h3>World Map Showing Overall Data for Customers Across Different Countries</h3>
+    <div class='image'>
+        <iframe src="bookings_by_country_avg_adr.html" width="100%" height="500px" frameborder="0"></iframe>
+    </div>
+    <div class='container'>
+        <div class='text'>
+            <p>
+                We wanted to learn about how the dataset and hotel visitor patterns differed based on the visitor’s country of origin. 
+                While we initially mapped the concentration of customers by country, we found this to be uninteresting due to the high 
+                concentration in Portugal and Spain where the hotels were located. As such, we pivoted to display the average daily rate 
+                customers from each country pay. The color gradient makes it really easy to see the variation across all the countries 
+                in the dataset, and see which countries are not included in the dataset. The tooltip provided when users hover over a 
+                country also allowed us to increase interactivity with the graph and display a litany of new and interesting information 
+                about the customers from that country.
+            </p>
+        
+            <p>
+                Examining the interactive map of different countries really highlighted for us the variation in the dataset. Some countries 
+                have a healthy, sizable number of datapoints while others have just one or zero data points. This points out one of the 
+                weaknesses of the dataset, while simultaneously providing us interesting insights into the customers represented in the 
+                dataset. 
+            </p>
+            <p>
+                Moving to the more interesting components of the dataset, we can see how some countries further from the location of the 
+                hotels have higher average daily rates. At the same time, we can see that the majority of average daily rates are fairly 
+                consistent across the board, hovering around 100 per night. This articulates how there may be some factors around country 
+                of origin that impact the average daily rate, but the average daily rate will still generally stay within a reasonable range.
+            </p>
+            <p>
+                Digging into some of the countries’ tooltip data points, we can see that Moroccan visitors make on average 0.72 special requests,
+                while Algerian visitors make an average of 0.54 special requests. This suggests that even between two immediately adjacent 
+                countries, there can be large variations in the preferences and requests from the hotel visitors from each of the two countries.
+            </p>
+            <p>
+                Endless other insights could be drawn from the map, with each new person examining it finding new and interesting things to point 
+                out. That is the true beauty of such a highly interactive and information-dense graph. Each person examining the graph may have 
+                different knowledge about different regions and countries on the graph that help provide unique insights that we could not.
+                We encourage all viewers to make their own conclusions from the graph and their own explorations.
+            </p>
+        </div>
+    </div>
 
     <h3>Scatter Plot Showing Relationship between Lead Time and Costs for Hotel Bookings</h3>
-
     <div class='image'>
         <iframe src="vis2.html" width="100%" height="500px" frameborder="0"></iframe>
     </div>
-
-    <p>
-        Since we wanted to see the relationship between the number of days booked in advance and the cost of the booking,
-        we thought using a scatter plot would be beneficial. We plotted the number of days booked in advance on the y-axis
-        and the average daily cost of a booking on the x-axis. We plotted the data for both city hotels and resort hotels 
-        because we wanted to see if there was a
-        difference in the relationship between the number of days booked in advance and the cost of the booking between the
-        two types of hotels. We plotted the data for different room types because we wanted to see if there was a difference
-        in the relationship between the number of days booked in advance and the cost of the booking between the different room
-        types. We used different colors to distinguish between the different types of hotels because we wanted
-        to make it easier for the reader to see which points corresponded to which type of hotel and room type. We used a
-        dropdown menu to select different types of hotels because we wanted to make it easier for the reader to see the
-        relationship between the number of days booked in advance and the cost of the booking for each type of hotel. We used
-        a dropdown menu to select different room types because we wanted to make it easier for the reader to see the relationship
-        between the number of days booked in advance and the cost of the booking for each room type.
-    </p>
-
-    <p>
-        The scatter plot shows that the number of days booked in advance and the cost of the booking are not directly
-        correlated.While not able to distinguish the points individually, the shape of the graph is a valuable learning. A bell curve
-        can be seen when looking at all data. When filtering, can see how the hotel and room types affect the distribution of the data.
-        Certain hotel room types have more corrleation between the number of days booked in advance and the cost of the booking than others.
-    </p>
+    <div class='container'>
+        <div class='text'>
+            <p>
+                Since we wanted to see the relationship between the number of days booked in advance and the cost of the booking,
+                we thought using a scatter plot would be beneficial. We plotted the number of days booked in advance on the y-axis
+                and the average daily cost of a booking on the x-axis. We plotted the data for both city hotels and resort hotels 
+                because we wanted to see if there was a
+                difference in the relationship between the number of days booked in advance and the cost of the booking between the
+                two types of hotels. We plotted the data for different room types because we wanted to see if there was a difference
+                in the relationship between the number of days booked in advance and the cost of the booking between the different room
+                types. We used different colors to distinguish between the different types of hotels because we wanted
+                to make it easier for the reader to see which points corresponded to which type of hotel and room type. We used a
+                dropdown menu to select different types of hotels because we wanted to make it easier for the reader to see the
+                relationship between the number of days booked in advance and the cost of the booking for each type of hotel. We used
+                a dropdown menu to select different room types because we wanted to make it easier for the reader to see the relationship
+                between the number of days booked in advance and the cost of the booking for each room type.
+            </p>
+        
+            <p>
+                The scatter plot shows that the number of days booked in advance and the cost of the booking are not directly
+                correlated.While not able to distinguish the points individually, the shape of the graph is a valuable learning. A bell curve
+                can be seen when looking at all data. When filtering, can see how the hotel and room types affect the distribution of the data.
+                Certain hotel room types have more corrleation between the number of days booked in advance and the cost of the booking than others.
+            </p>
+        </div>
+    </div>
 
     <h3>Line Graph Showing Costs for Hotel Bookings Across Several Years</h3>
     <div class='image'>
@@ -165,11 +207,76 @@
         </div>
     </div>
 
+    <h3>Bar Plot Showing Average Daily Rates for Different Numbers of Kids</h3>
+    <div class='image'>
+        <iframe src="kids_bar_plot.html" width="100%" height="500px" frameborder="0"></iframe>
+    </div>
+    <div class='container'>
+        <div class='text'>
+            <p>
+                We wanted to see how the number of kids affects the daily hotel rate so we decided to use a bar graph and average 
+                the daily rates. Originally there were two separate columns, one for kids and one for babies, but it made more sense 
+                to combine them together into a total_kids column. This allowed for a better understanding of how many kids were in 
+                each booking. We then averaged the daily rate based on each number of kids and created the graph.
+            </p>
+            <p>
+                As expected, as the number of kids increased, the average daily rate of a hotel room also increased. Interestingly, 
+                the jump from 1 kid to 2 kids was larger than the jump from 2 kids to 3 kids. There were also three data points that 
+                had 9 or 10 kids. The most interesting part of these data points is that the daily rate was cheaper for 9-10 kids 
+                than for 1-3 kids. We were wondering why it would be cheaper for such a large amount of kids and the conclusion we 
+                came to was that the three data points likely represented a group of kids coming for a trip with a school. The school 
+                likely discussed ahead of time with the hotel, to get a cheaper rate.
+            </p>
+        </div>
+    </div>
+
+    <h3>Bar Plot Showing Number of Cancellations Based on Whether a Travel Agent was Used</h3>
+    <div class='image'>
+        <iframe src="bar_plot.html" width="100%" height="500px" frameborder="0"></iframe>
+    </div>
+    <div class='container'>
+        <div class='text'>
+            <p>
+                We wanted to see how many bookings used a travel agent and how many didn’t, so we color coded the bars. The blue 
+                represented that a travel agent was not used and the orange represented that one was used. We also wanted to see the 
+                total number of cancellations based on travel agents. We decided to create two different bar graphs, one for canceled 
+                and the other for not canceled.
+            </p>
+            <p>
+                Overall, there were less bookings canceled than not canceled but there were also more bookings that used a travel agent. 
+                The ratio of canceled to not canceled when a travel agent was used was higher than when one was not used. What was most 
+                interesting was that although there were many more bookings with a travel agent, there were also many cancellations. 
+                This could be due to the fact that since the process of cancellations is easier through a travel agent, people are less 
+                willing to hold on to their booking. 
+            </p>
+        </div>
+    </div>
+
     <h3>Summary and Additional Work</h3>
 
     <p>
-        TODO!
+        One of our overall findings was that the number of days booked in advance and the cost of the booking are 
+        not directly correlated. We also found that the average daily cost of a hotel booking is cheapest around 
+        early January through mid-March and around early November until late December, and that the average daily 
+        cost of a hotel booking is most expensive around late July through late August. We found that as the number 
+        of kids in a booking increased, the average daily cost of a booking increased as well. Finally, we found that 
+        the ratio of canceled bookings to non-canceled bookings for when a travel agent was used was higher than that 
+        for when a travel agent was not used. 
     </p>
+    <p>
+        Our work is important because future travelers can have a sense of when bookings are cheapest and most expensive, 
+        which allows them to make better decisions when booking. They also get a sense of what rates they might see based 
+        on how many kids they bring. Additionally, we can begin to understand what factors contribute to an increase in a 
+        hotel’s daily rate.
+    </p>
+    <p>
+        Now that we have done work with these two specific hotels we can expand to compare costs and other attributes 
+        between a greater variety of hotels. For example we could look at motels, hostels, bed and breakfasts, and inns. 
+        We could also dig deeper into specific hotel chains like Marriott or Hilton to compare luxury hotels versus cheaper 
+        ones.
+    </p>
+
+    <h3>Contact Info</h3>
 
     <p>If you are interested in the project and want to share more
         opinions or resource about the project, please contact:
